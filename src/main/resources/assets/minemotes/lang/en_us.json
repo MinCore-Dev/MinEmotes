@@ -1,0 +1,13 @@
+{
+  "minemotes.cmd.disabled": "This feature is disabled by the server.",
+  "minemotes.cmd.cooldown": "Please wait before using that again.",
+  "minemotes.crawl.on": "Crawl enabled.",
+  "minemotes.crawl.off": "Crawl disabled.",
+  "minemotes.crawl.toggled": "Crawl toggled.",
+  "minemotes.sit.start": "You sit down.",
+  "minemotes.sit.stop": "You stand up.",
+  "minemotes.lay.start": "You lay down.",
+  "minemotes.lay.stop": "You stand up.",
+  "minemotes.belly.start": "You lay down on your belly.",
+  "minemotes.belly.stop": "You stand up."
+}

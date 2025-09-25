@@ -1,0 +1,69 @@
+plugins {
+  id 'java'
+  id 'fabric-loom' version '1.11-SNAPSHOT'
+  id 'com.modrinth.minotaur' version '2.8.7'
+}
+
+group = project.group
+version = project.modVersion
+
+java {
+  toolchain { languageVersion = JavaLanguageVersion.of(project.javaVersion as int) }
+  withJavadocJar()
+  withSourcesJar()
+}
+
+repositories {
+  mavenCentral()
+  maven { url = 'https://maven.fabricmc.net/' }
+}
+
+dependencies {
+  minecraft "com.mojang:minecraft:${minecraftVersion}"
+  mappings "net.fabricmc:yarn:${mappings}:v2"
+  modImplementation "net.fabricmc:fabric-loader:${fabricLoaderVersion}"
+  modImplementation "net.fabricmc.fabric-api:fabric-api:${fabricApiVersion}"
+
+  // Fabric Permissions API (LuckPerms compatible)
+  modImplementation "me.lucko:fabric-permissions-api:${permissionsApiVersion}"
+
+  // MinCore is a hard dependency declared in fabric.mod.json.
+  // IMPORTANT: Do NOT bundle MinCore. Modrinth will auto-resolve based on dependency metadata.
+  // Example (when MinCore is available on a Maven repo):
+  // modImplementation "dev.mincore:mincore:0.2.0"
+}
+
+tasks.withType(JavaCompile).configureEach {
+  options.release = project.javaVersion as int
+  options.encoding = 'UTF-8'
+}
+
+loom {
+  runs {
+    server {
+      server()
+      name "MinEmotes Dev Server"
+      vmArg "-Dfabric.log.level=info"
+    }
+  }
+}
+
+modrinth {
+  token = project.findProperty("modrinthToken") ?: System.getenv("MODRINTH_TOKEN")
+  projectId = project.findProperty("modrinthProjectId") ?: "REPLACE_WITH_MINEMOTES_PROJECT_ID"
+  versionNumber = project.modVersion
+  versionName = "MinEmotes ${project.modVersion}"
+  changelog = project.findProperty("modChangelog") ?: "Initial skeleton"
+  uploadFile = tasks.remapJar
+  gameVersions = [ project.minecraftVersion ]
+  loaders = [ "fabric" ]
+  dependencies {
+    required.project(project.findProperty("modrinthMinCoreId") ?: "REPLACE_WITH_MINCORE_PROJECT_ID")
+  }
+}
+
+dependencies {
+  testImplementation platform("org.junit:junit-bom:5.10.2")
+  testImplementation "org.junit.jupiter:junit-jupiter"
+}
+tasks.test { useJUnitPlatform() }

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "minemotes",
+  "version": "${version}",
+  "name": "MinEmotes",
+  "environment": "server",
+  "license": "MIT",
+  "authors": ["YourName"],
+  "description": "Simple emotes: crawl, sit, lay, belly — server-side only. MinCore add-on.",
+  "entrypoints": { "main": ["dev.minemotes.MinEmotesMod"] },
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "${minecraft_version}",
+    "fabric-api": "*",
+    "mincore": ">=0.2.0"
+  },
+  "suggests": {
+    "fabric-permissions-api-v0": "*"
+  },
+  "contact": { "sources": "https://github.com/your/repo" }
+}
