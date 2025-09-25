@@ -24,3 +24,14 @@ Use the gateway:
 boolean allowed = dev.minemotes.perms.Perms.check(player, "minemotes.sit", 2);
 ```
 Do not hard depend on LuckPerms; the gateway detects it at runtime.
+
+
+## Permission checks
+Prefer MinCore:
+```java
+boolean allowed = dev.mincore.perms.Perms.check(player, "minemotes.sit", 2);
+```
+Local fallback (automatic via our adapter):
+```java
+boolean allowed = dev.minemotes.perms.Perms.check(player, "minemotes.sit", 2);
+```

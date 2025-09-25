@@ -35,3 +35,6 @@ MinEmotes checks permissions in this order:
 1) **LuckPerms API** (if LuckPerms is installed)  
 2) **Fabric Permissions API** (if present)  
 3) **Vanilla OP level** fallback (default OP≥2 for admin commands)
+
+## Permission gateway
+This mod **prefers MinCore’s gateway** (`dev.mincore.perms.Perms`) for permission checks, with a local fallback to LuckPerms → Fabric Permissions API → OP.

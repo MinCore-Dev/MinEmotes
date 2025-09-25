@@ -159,3 +159,9 @@ permissions: {
   3) **Vanilla OP level** fallback (configurable default level per command; use 2 for admin by default).
 - Ship it as `dev.minemotes.perms.Perms#check(ServerPlayerEntity, node, opLevel)`.
 - Do **not** declare LuckPerms or Fabric Permissions API as hard dependencies in `fabric.mod.json`; list them under `suggests` only.
+
+---
+
+## 9) Permission gateway (MinCore-first)
+- Prefer **MinCore’s gateway**: call `dev.mincore.perms.Perms.check(player, node, opLevel)`.
+- If unavailable (older MinCore), fall back to a local gateway: LuckPerms → Fabric Permissions API → OP fallback (no hard depends).

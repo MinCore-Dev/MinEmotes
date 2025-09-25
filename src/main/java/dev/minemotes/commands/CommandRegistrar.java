@@ -15,3 +15,5 @@ public final class CommandRegistrar {
     // svc.sit(p.getUuid());
   }
 }
+
+// NOTE: Permission checks should use MinCore’s gateway first (with local fallback).
