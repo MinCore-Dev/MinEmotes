@@ -148,3 +148,14 @@ permissions: {
 ## 8) Packaging rule (critical)
 - **Do NOT bundle or ship MinCore** inside MinEmotes or its releases.
 - Rely on `fabric.mod.json` `depends` + Modrinth metadata for auto-resolve.
+
+
+---
+
+## 9) Permission gateway (LuckPerms-first)
+- Implement a **permission gateway** with the following order:
+  1) **LuckPerms official API** via `LuckPermsProvider` (preferred; respects contexts).
+  2) **Fabric Permissions API** if present.
+  3) **Vanilla OP level** fallback (configurable default level per command; use 2 for admin by default).
+- Ship it as `dev.minemotes.perms.Perms#check(ServerPlayerEntity, node, opLevel)`.
+- Do **not** declare LuckPerms or Fabric Permissions API as hard dependencies in `fabric.mod.json`; list them under `suggests` only.

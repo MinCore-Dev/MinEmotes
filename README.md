@@ -28,3 +28,10 @@ Built as a **MinCore** add-on. LuckPerms supported via Fabric Permissions API.
 - `/lay` — `minemotes.lay`
 - `/belly` — `minemotes.belly`
 - `/minemotes reload` — `minemotes.admin`
+
+
+## Permission gateway
+MinEmotes checks permissions in this order:
+1) **LuckPerms API** (if LuckPerms is installed)  
+2) **Fabric Permissions API** (if present)  
+3) **Vanilla OP level** fallback (default OP≥2 for admin commands)

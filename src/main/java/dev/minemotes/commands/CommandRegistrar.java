@@ -1,12 +1,17 @@
 package dev.minemotes.commands;
 
 /**
- * Placeholder for command registration.
- * Replace with Fabric command API wiring.
- * Ensure permission checks use Fabric Permissions API (LuckPerms compatible).
+ * Placeholder for Fabric command registration. Demonstrates permission checks.
  */
 public final class CommandRegistrar {
   public static void registerAll(dev.minemotes.core.Config cfg, dev.minemotes.core.EmoteService svc) {
     System.out.println("[MinEmotes] CommandRegistrar.registerAll() (stub)");
+    // Example usage (pseudo-code):
+    // ServerPlayerEntity p = ...;
+    // if (!dev.minemotes.perms.Perms.check(p, cfg.permissions.sit, 2)) {
+    //   // send no-permission message
+    //   return;
+    // }
+    // svc.sit(p.getUuid());
   }
 }

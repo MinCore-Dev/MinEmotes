@@ -19,13 +19,15 @@ repositories {
 }
 
 dependencies {
+  compileOnly "net.luckperms:api:5.4"
+  compileOnly "me.lucko:fabric-permissions-api:${permissionsApiVersion}"
+
   minecraft "com.mojang:minecraft:${minecraftVersion}"
   mappings "net.fabricmc:yarn:${mappings}:v2"
   modImplementation "net.fabricmc:fabric-loader:${fabricLoaderVersion}"
   modImplementation "net.fabricmc.fabric-api:fabric-api:${fabricApiVersion}"
 
   // Fabric Permissions API (LuckPerms compatible)
-  modImplementation "me.lucko:fabric-permissions-api:${permissionsApiVersion}"
 
   // MinCore is a hard dependency declared in fabric.mod.json.
   // IMPORTANT: Do NOT bundle MinCore. Modrinth will auto-resolve based on dependency metadata.
@@ -58,11 +60,17 @@ modrinth {
   gameVersions = [ project.minecraftVersion ]
   loaders = [ "fabric" ]
   dependencies {
+  compileOnly "net.luckperms:api:5.4"
+  compileOnly "me.lucko:fabric-permissions-api:${permissionsApiVersion}"
+
     required.project(project.findProperty("modrinthMinCoreId") ?: "REPLACE_WITH_MINCORE_PROJECT_ID")
   }
 }
 
 dependencies {
+  compileOnly "net.luckperms:api:5.4"
+  compileOnly "me.lucko:fabric-permissions-api:${permissionsApiVersion}"
+
   testImplementation platform("org.junit:junit-bom:5.10.2")
   testImplementation "org.junit.jupiter:junit-jupiter"
 }
