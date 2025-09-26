@@ -21,6 +21,8 @@ repositories {
 dependencies {
   compileOnly "net.luckperms:api:5.4"
   compileOnly "me.lucko:fabric-permissions-api:${permissionsApiVersion}"
+  implementation 'blue.endless:jankson:1.2.3'
+  implementation 'com.google.guava:guava:33.2.1-jre'
 
   minecraft "com.mojang:minecraft:${minecraftVersion}"
   mappings "net.fabricmc:yarn:${mappings}:v2"
@@ -73,5 +75,8 @@ dependencies {
 
   testImplementation platform("org.junit:junit-bom:5.10.2")
   testImplementation "org.junit.jupiter:junit-jupiter"
+  def mockitoVersion = '5.2.0'
+  testImplementation "org.mockito:mockito-core:${mockitoVersion}"
+  testImplementation "org.mockito:mockito-inline:${mockitoVersion}"
 }
 tasks.test { useJUnitPlatform() }
