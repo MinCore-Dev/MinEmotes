@@ -1,13 +1,16 @@
 {
-  "minemotes.cmd.disabled": "This feature is disabled by the server.",
-  "minemotes.cmd.cooldown": "Please wait before using that again.",
-  "minemotes.crawl.on": "Crawl enabled.",
-  "minemotes.crawl.off": "Crawl disabled.",
-  "minemotes.crawl.toggled": "Crawl toggled.",
+  "minemotes.cmd.disabled": "This emote is disabled right now.",
+  "minemotes.cmd.cooldown": "Please wait %s seconds before using another emote.",
+  "minemotes.crawl.on": "You start crawling.",
+  "minemotes.crawl.off": "You stop crawling.",
+  "minemotes.crawl.toggled": "You toggle crawl.",
   "minemotes.sit.start": "You sit down.",
-  "minemotes.sit.stop": "You stand up.",
-  "minemotes.lay.start": "You lay down.",
-  "minemotes.lay.stop": "You stand up.",
-  "minemotes.belly.start": "You lay down on your belly.",
-  "minemotes.belly.stop": "You stand up."
+  "minemotes.sit.stop": "You stand back up.",
+  "minemotes.chair.start": "You take a seat.",
+  "minemotes.chair.stop": "You stand up from the chair.",
+  "minemotes.lay.start": "You lie down.",
+  "minemotes.lay.stop": "You get up.",
+  "minemotes.belly.start": "You lie down on your belly.",
+  "minemotes.belly.stop": "You get up from your belly.",
+  "minemotes.reload.ok": "MinEmotes configuration reloaded."
 }

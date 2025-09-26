@@ -1,1 +1,34 @@
-{}
+{
+  core: {
+    enabled: true,
+    cooldownS: 2,
+    cancelOnDamage: { crawl: false, sit: true, chair: true, lay: true, belly: true },
+    cancelOnMove: { crawl: false, sit: true, chair: true, lay: false, belly: false },
+    allowInWater: { sit: false, chair: false, lay: false, belly: false },
+    cancelOnDanger: true,
+    disableInWorlds: []
+  },
+  emotes: {
+    crawl: { enabled: true, waterOnly: false },
+    sit: { enabled: true, offsetX: 0.0, offsetY: -0.45, offsetZ: 0.0, pitchDegrees: 0.0 },
+    chair: { enabled: true, offsetX: 0.0, offsetY: 0.0, offsetZ: 0.0, pitchDegrees: 0.0 },
+    lay: { enabled: true, offsetX: 0.0, offsetY: -0.90, offsetZ: 0.0, pitchDegrees: 90.0 },
+    belly: { enabled: true, offsetX: 0.0, offsetY: -0.92, offsetZ: 0.0, pitchDegrees: -90.0 }
+  },
+  permissions: {
+    crawl: "minemotes.crawl",
+    sit: "minemotes.sit",
+    chair: "minemotes.chair",
+    lay: "minemotes.lay",
+    belly: "minemotes.belly",
+    admin: "minemotes.admin",
+    fallbackOpLevels: {
+      crawl: 0,
+      sit: 0,
+      chair: 0,
+      lay: 0,
+      belly: 0,
+      admin: 2
+    }
+  }
+}
